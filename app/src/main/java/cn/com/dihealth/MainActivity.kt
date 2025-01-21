@@ -1,6 +1,7 @@
 package cn.com.dihealth
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -30,29 +31,44 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun openGpioUsb1PowerTrue(){
-        GpioUtils.setUsb1Power(true)
+       val returnValue =  GpioUtils.setUsb1Power(true)
+        Log.e("TAG",returnValue.toString());
     }
     private fun openGpioUsb2PowerTrue(){
-        GpioUtils.setUsb2Power(true)
+        val returnValue =   GpioUtils.setUsb2Power(true)
+        Log.e("TAG",returnValue.toString());
+
     }
     private fun openGpioUsb3PowerTrue(){
-        GpioUtils.setUsb3Power(true)
+        val returnValue =   GpioUtils.setUsb3Power(true)
+        Log.e("TAG",returnValue.toString());
+
     }
     private fun closeTTyPowerFalse(){
-        GpioUtils.setTTyPower(false)
+        val returnValue =  GpioUtils.setTTyPower(false)
+        Log.e("TAG",returnValue.toString());
+
     }
     private fun openTTyPowerTrue(){
-        GpioUtils.setTTyPower(true)
+        val returnValue =  GpioUtils.setTTyPower(true)
+        Log.e("TAG",returnValue.toString());
+
     }
 
     private fun closeGpioUsb1PowerFalse(){
-        GpioUtils.setUsb1Power(false)
+        val returnValue =  GpioUtils.setUsb1Power(false)
+        Log.e("TAG",returnValue.toString());
+
     }
     private fun closeGpioUsb2PowerFalse(){
-        GpioUtils.setUsb2Power(false)
+        val returnValue =  GpioUtils.setUsb2Power(false)
+        Log.e("TAG",returnValue.toString());
+
     }
     private fun closeGpioUsb3PowerFalse(){
-        GpioUtils.setUsb3Power(false)
+        val returnValue =   GpioUtils.setUsb3Power(false)
+        Log.e("TAG",returnValue.toString());
+
     }
 
     override fun onClick(v: View?) {
