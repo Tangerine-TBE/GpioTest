@@ -2,6 +2,7 @@
 #include <cstring>
 #include <cstdio>
 #include <jni.h>
+#include <cerrno>  //
 #include <android/log.h>
 
 
@@ -19,17 +20,20 @@ Java_cn_com_dihealth_util_GpioUtils_setUsbPower(JNIEnv *env, jclass clazz, jbool
 
     if (usb1Power == nullptr || usb2Power == nullptr || usb3Power == nullptr) {
         if(usb1Power == nullptr){
-            __android_log_print(ANDROID_LOG_INFO, "GPIO_NATIVE", "usb1Power is not exit");
+            printf("Error opening usb1Power: %s\n", strerror(errno));
+            __android_log_print(ANDROID_LOG_ERROR, "GPIO_NATIVE", "Error opening usb1Power: %s", strerror(errno));
         }else{
             __android_log_print(ANDROID_LOG_INFO, "GPIO_NATIVE", "usb1Power is  exit");
         }
         if(usb2Power == nullptr){
-            __android_log_print(ANDROID_LOG_INFO, "GPIO_NATIVE", "usb2Power is not exit");
+            printf("Error opening usb1Power: %s\n", strerror(errno));
+            __android_log_print(ANDROID_LOG_ERROR, "GPIO_NATIVE", "Error opening usb2Power: %s", strerror(errno));
         }else{
             __android_log_print(ANDROID_LOG_INFO, "GPIO_NATIVE", "usb2Power is  exit");
         }
         if(usb3Power == nullptr){
-            __android_log_print(ANDROID_LOG_INFO, "GPIO_NATIVE", "usb3Power is not exit");
+            printf("Error opening usb1Power: %s\n", strerror(errno));
+            __android_log_print(ANDROID_LOG_ERROR, "GPIO_NATIVE", "Error opening usb3Power: %s", strerror(errno));
         }else{
             __android_log_print(ANDROID_LOG_INFO, "GPIO_NATIVE", "usb3Power is  exit");
         }
